@@ -31,11 +31,12 @@ section {
 
 a {
   outline: none;
-  color: $text-color;
+  color: $link-color;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   @include transition($transition-base);
   &:hover {
-    //text-decoration: underline;
+    color: $link-hover-color;
+    text-decoration: underline;
   }
   &:active,
   &:focus,
@@ -101,17 +102,11 @@ button, input, textarea {
 }
 
 ::-webkit-input-placeholder {
-  font-weight: $font-weight-light;
-  font-size: 1rem;
-  color: $input-placeholder-color;
-  transition: $transition-base;
+  @include input-placeholder();
 }
 
 ::-webkit-textarea-placeholder {
-  font-weight: $font-weight-light;
-  font-size: 1rem;
-  color: $input-placeholder-color;
-  transition: $transition-base;
+  @include input-placeholder();
 }
 
 input {
@@ -119,24 +114,21 @@ input {
 
   &[type="text"], &[type="email"], &[type="password"], &[type="number"], &[type="tel"], &[type="search"], &[type="datetime"], &[type="url"] {
     cursor: auto;
-    padding: 0 5px;
+    //padding: 0 5px;
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
 
     &:focus {
-      background: none;
+      //background: none;
 
       &::-webkit-input-placeholder {
-        color: transparent;
-        transform: rotate3d(1, 0, 0, 90deg);
+        @include input-focus-placeholder();
       }
       &::-moz-placeholder {
-        color: transparent;
-        transform: rotate3d(1, 0, 0, 90deg);
+        @include input-focus-placeholder();
       }
       &::-ms-placeholder {
-        color: transparent;
-        transform: rotate3d(1, 0, 0, 90deg);
+        @include input-focus-placeholder();
       }
     }
   }
@@ -163,16 +155,10 @@ input {
   }
 
   &::-moz-placeholder {
-    font-weight: $font-weight-light;
-    font-size: 1rem;
-    color: $input-placeholder-color;
-    transition: $transition-base;
+    @include input-placeholder();
   }
   &::-ms-placeholder {
-    font-weight: $font-weight-light;
-    font-size: 1rem;
-    color: $input-placeholder-color;
-    transition: $transition-base;
+    @include input-placeholder();
   }
 }
 
@@ -201,16 +187,10 @@ textarea {
   }
 
   &::-moz-placeholder {
-    font-weight: $font-weight-light;
-    font-size: 1rem;
-    color: $input-placeholder-color;
-    transition: $transition-base;
+    @include input-placeholder();
   }
   &::-ms-placeholder {
-    font-weight: $font-weight-light;
-    font-size: 1rem;
-    color: $input-placeholder-color;
-    transition: $transition-base;
+    @include input-placeholder();
   }
 }
 
@@ -305,18 +285,18 @@ iframe {
 
 ::selection {
   text-shadow: none;
-  color: $text-color;
-  background: $main-first-color;
+  color: $selection-text-color;
+  background: $selection-bg-color;
 }
 
 ::-moz-selection {
   text-shadow: none;
-  color: $text-color;
-  background: $main-first-color;
+  color: $selection-text-color;
+  background: $selection-bg-color;
 }
 
 ::-ms-selection {
   text-shadow: none;
-  color: $text-color;
-  background: $main-first-color;
+  color: $selection-text-color;
+  background: $selection-bg-color;
 }

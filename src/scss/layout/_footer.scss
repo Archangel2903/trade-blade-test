@@ -5,6 +5,70 @@ footer.footer {
   order: 3;
   -webkit-order: 3;
   position: relative;
+  min-width: 320px;
+  width: 100%;
+  min-height: 353px;
 }
 
-.copyright {}
+.footer-navigation {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 353px;
+  padding: 44px 0 40px;
+
+  &__text {
+    margin-bottom: 224px;
+    color: rgba(#ffffff, .4);
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  &__nav {
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-content: center;
+      align-items: center;
+      gap: 24px;
+      padding: 0;
+      margin: 0;
+      opacity: .67;
+
+      li {
+        text-transform: uppercase;
+
+        a {
+
+        }
+      }
+    }
+  }
+}
+
+.footer-info {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-content: flex-end;
+  align-items: flex-end;
+  gap: 180px;
+  height: 100%;
+  min-height: 353px;
+  padding: 26px 0 40px;
+  border-left: 1px solid rgba(#ffffff, .3);
+
+  .logo {}
+  .copyright {}
+}
+
+.copyright {
+  margin: 0;
+  color: rgba(#ffffff, .5);
+  font-size: 14px;
+
+  &::before {
+    content: '©';
+  }
+}

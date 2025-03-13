@@ -1,12 +1,14 @@
 import '../scss/main.scss';
 import 'intersection-observer';
 import $ from 'jquery';
-import 'jquery-ui'
-import 'jquery-ui/ui/effect'
+import 'jquery-ui';
+import 'jquery-ui/ui/effect';
+import 'jquery-ui/ui/widgets/tabs';
+import 'jquery-ui/ui/widgets/selectmenu';
+import '../img/chevrone-down.svg';
 import 'bootstrap';
 import 'popper.js';
 import Swiper from 'swiper/dist/js/swiper.min';
-import noUiSlider from 'nouislider';
 
 $(window).on('load', function () {
     let b = $('body');
@@ -31,74 +33,55 @@ $(function () {
             slider = new Swiper('.swiper-container', {
                 observer: true,
                 observeParents: true,
-                loop: true,
+                // loop: true,
                 autoplay: true,
-                spaceBetween: 25,
-                slidesPerView: 1,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev'
+                spaceBetween: 20,
+                slidesPerView: "auto",
+                // navigation: {
+                //     nextEl: '.swiper-button-next',
+                //     prevEl: '.swiper-button-prev'
+                // },
+                // pagination: {
+                //     el: '.swiper-pagination',
+                //     clickable: true
+                // },
+                scrollbar: {
+                    el: $('.swiper-scrollbar'),
                 },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true
-                },
-                /*scrollbar: {
-                    el: '.swiper-scrollbar',
-                },*/
                 dynamicBullets: true,
             });
         }
     }
 
-    // Range slide
-    if ($('input[type="range"]')) {
-        let sliderRange = document.querySelectorAll('.slider-range');
-        let sliderHandles = document.querySelectorAll('.slider-handles');
+    // JQuery UI
+    $("#tabs").tabs({
+        active: 0,
+    });
+    $(".select-js").selectmenu({
+        icons: { button: 'ui-icon-caret-1-s' }
+    });
 
-        if (sliderRange.length) {
-            sliderRange.forEach(function (elem) {
-                let input = elem.childNodes[0];
-                let startValue = input.hasAttribute('value') ? Number(input.getAttribute('value')) : 1;
-                let minValue = input.hasAttribute('min') ? Number(input.getAttribute('min')) : 1;
-                let maxValue = input.hasAttribute('max') ? Number(input.getAttribute('max')) : 100;
-
-                input.remove();
-
-                noUiSlider.create(elem, {
-                    start: [startValue],
-                    step: 1,
-                    behavior: 'tap',
-                    connect: [true, false],
-                    range: {
-                        'min': [minValue],
-                        'max': [maxValue]
-                    }
-                });
+    // FAQ
+    (function () {
+        let faq = $('.faq__item');
+        if (faq.length) {
+            $('.faq__item-head').on('click', function () {
+                $(this).parent().toggleClass('active');
+                $(this).next().stop().slideToggle(300);
             });
         }
+    })();
 
-        if (sliderHandles.length) {
-            sliderHandles.forEach(function (elem) {
-                let input = elem.childNodes[0];
-                let minValue = input.hasAttribute('min') ? Number(input.getAttribute('min')) : 1;
-                let maxValue = input.hasAttribute('max') ? Number(input.getAttribute('max')) : 100;
+    // Menu switch
+    (function () {
+        $('.header-navigation-opened').on('click', function() {
+            $(this).prev().addClass('open');
+        });
 
-                input.remove();
-
-                noUiSlider.create(elem, {
-                    start: [minValue, maxValue/2],
-                    step: 1,
-                    behavior: 'tap-drag',
-                    connect: true,
-                    range: {
-                        'min': minValue,
-                        'max': maxValue
-                    }
-                });
-            });
-        }
-    }
+        $('.header-navigation-closed').on('click', function() {
+            $(this).parent().removeClass('open');
+        });
+    })();
 
     // Lazy load observer
     const imagesAll = document.querySelectorAll('img[data-src]');

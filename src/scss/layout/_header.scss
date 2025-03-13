@@ -9,3 +9,132 @@ header.header {
   width: 100%;
   z-index: 100;
 }
+
+.logo {
+  text-decoration: none !important;
+}
+
+.header-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-navigation {
+  display: inline-flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: flex-start;
+
+  position: absolute;
+  top: -100vh;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: #6a54ff;
+  padding: 84px 16px 16px;
+  transition: $transition-base;
+
+  &.open {
+    top: 0;
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: flex-start;
+      align-content: center;
+      align-items: flex-start;
+      gap: 32px;
+      padding: 0;
+      margin: 0;
+      opacity: .7;
+
+      li {
+        font-size: 14px;
+        text-transform: uppercase;
+
+        a {
+          text-decoration: none !important;
+
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+
+  &__tools {
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: auto;
+  }
+
+  &-opened, &-closed {
+    background: none;
+    border: none;
+    padding: 0;
+    outline: none !important;
+    width: 32px;
+    height: 32px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--white);
+    }
+  }
+
+  &-opened {
+
+  }
+  &-closed {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+}
+
+
+@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(md) {}
+@include media-breakpoint-up(lg) {
+
+}
+@include media-breakpoint-up(xl) {
+  .header-navigation {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: static;
+    width: auto;
+    min-height: auto;
+    background: none;
+    gap: 24px;
+    padding: 2px 0;
+
+    &-opened, &-closed {
+      display: none;
+    }
+
+    &__nav {
+      ul {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+  }
+}
+@include media-breakpoint-up(xxl) {
+  .header-navigation {
+    gap: 82px;
+  }
+}

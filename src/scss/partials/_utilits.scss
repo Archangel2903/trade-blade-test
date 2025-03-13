@@ -100,7 +100,166 @@
   }
 }
 
-.title {
-  font-size: 2.5rem;
-  font-weight: $font-weight-normal;
+.section-title {
+  margin: 0 0 4px;
+  color: inherit;
+  font-size: 44px;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+}
+
+.form {
+  &-group {
+    position: relative;
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+    }
+  }
+  &-control {
+    height: auto;
+    padding: 20px 16px;
+    background: #201A4F;
+    border: none;
+    color: var(--white);
+    
+    &:focus {
+      background: #4A3BB3;
+      color: var(--white);
+    }
+  }
+  &-text {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, .3);
+  }
+}
+
+.btn {
+  &.btn {
+    padding: 16px 24px;
+
+    &-sm {
+      border-radius: 3px;
+      padding: 11px 24px;
+      font-weight: 500;
+    }
+
+    &-primary {
+      box-shadow: 0 0 4px 0 $primary;
+      &:hover {
+        color: var(--white);
+      }
+    }
+    &-outline {
+      &-primary {
+        background-color: rgba(87, 225, 255, 0.2);
+        border-width: 2px;
+        box-shadow: 0 0 4px 0 $primary;
+
+        &:hover {
+          color: var(--white);
+        }
+      }
+    }
+  }
+}
+
+.ui {
+  &-tabs {
+    padding: 0;
+
+    .ui-tabs {
+      &-nav {
+        display: inline-flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+        background: rgba(#6a54ff, .4);
+        border-radius: 4px;
+        padding: 4px;
+        margin: 0 0 44px;
+
+        .ui-tabs-anchor {
+          min-width: 200px;
+          padding: 8px 24px;
+          border-radius: 4px;
+          color: rgba(#57e1ff, .8);
+          text-align: center;
+          text-transform: uppercase;
+        }
+
+        li {
+          margin: 0;
+          font-size: 24px;
+          font-weight: 500;
+          &:not(:last-child) {
+            margin-right: 4px;
+          }
+
+          &.ui-tabs-active {
+            .ui-tabs-anchor {
+              background: #57e1ff;
+              color: var(--black);
+            }
+          }
+        }
+      }
+      &-panel {
+        padding: 0;
+      }
+    }
+  }
+
+  &-selectmenu {
+    &-button {
+      &.ui-button {
+        width: auto;
+      }
+
+      &-closed {}
+      &-open {
+        .ui-selectmenu-icon {
+          transform: rotate3d(1, 0, 0, 180deg);
+        }
+      }
+    }
+
+    &-icon {
+      order: 2;
+      width: 24px;
+      height: 24px;
+      background: url(../img/chevrone-down.svg) no-repeat center center;
+    }
+
+    &-text {
+      order: 1;
+    }
+  }
+
+  &-button {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    gap: 4px;
+    background: rgba(#ffffff, .2);
+    border-radius: 4px;
+    padding: 8px;
+    margin: 0;
+  }
+
+  &-menu {
+    background: rgba(#000000, .8);
+    border-radius: 4px;
+    padding: 8px;
+  }
 }

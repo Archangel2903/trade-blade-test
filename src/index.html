@@ -4,70 +4,811 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
-    <title>Главная</title>
+    <title>Main page</title>
 </head>
 <body>
 <!-- BODY -->
 <div class="main-wrapper">
     <!-- HEADER -->
     <header class="header">
-        <div class="container bg-light">
-            <h1>Header Title</h1>
+        <div class="container">
+            <div class="header-container">
+                <a href="/" class="logo">
+                    <img src="<%= require('./img/logo.svg') %>" alt="">
+                </a>
+
+                <div class="header-navigation">
+                    <button class="header-navigation-closed">
+                        <svg><use xlink:href="img/spritemap.svg#sprite-cross"></use></svg>
+                    </button>
+                    <nav class="header-navigation__nav">
+                        <ul class="header-navigation__nav-menu">
+                            <li><a href="#01">Цифры</a></li>
+                            <li><a href="#02">Сделки онлайн</a></li>
+                            <li><a href="#03">о компании</a></li>
+                            <li><a href="#04">как начать</a></li>
+                            <li><a href="#05">тарифы</a></li>
+                            <li><a href="#06">отзывы</a></li>
+                            <li><a href="#07">FAQ</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="header-navigation__tools">
+                        <button class="btn btn-sm btn-outline-primary text-uppercase">вход</button>
+                        <button class="btn btn-sm btn-primary border-0 text-uppercase">регистрация</button>
+                    </div>
+                </div>
+
+                <button class="header-navigation-opened">
+                    <svg><use xlink:href="img/spritemap.svg#sprite-burger"></use></svg>
+                </button>
+            </div>
         </div>
     </header>
     <!-- HEADER END -->
 
     <!-- CONTENT -->
     <main class="content">
-        <div class="section">
+        <section class="section section-welcome">
             <div class="container">
-                <h2>Section Slider</h2>
+                <div class="row">
+                    <div class="col-lg-6 order-1 order-lg-0">
+                        <div class="welcome">
+                            <h1 class="welcome__title">моментально Копируй сделки профи трейдеров</h1>
+                            <p class="welcome__subtitle">Начни копировать сделки с успешной командой профессиональных трейдеров в автоматическом режиме.</p>
 
-                <div class="main-slider swiper-container">
-                    <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <div class="swiper-slide">
-                            <picture>
-                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/placeholder-img.jpg') %>" alt="example" title="example">
-                            </picture>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <picture>
-                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/placeholder-img.jpg') %>" alt="example" title="example">
-                            </picture>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <picture>
-                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/placeholder-img.jpg') %>" alt="example" title="example">
-                            </picture>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <picture>
-                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/placeholder-img.jpg') %>" alt="example" title="example">
-                            </picture>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <picture>
-                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/placeholder-img.jpg') %>" alt="example" title="example">
-                            </picture>
+                            <form action="" method="post" class="welcome__form">
+                                <label for="start_subscribe" class="form-group d-block">
+                                    <input type="email" id="start_subscribe" class="form-control" placeholder="Ваш e–mail">
+                                    <button type="submit" class="welcome__form-btn btn btn-primary border-0 text-uppercase">начать</button>
+                                    <span class="form-text">5 дней бесплатного пользования</span>
+                                </label>
+                            </form>
                         </div>
                     </div>
 
-                    <div class="swiper-pagination"></div>
-
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-
-                    <!--<div class="swiper-scrollbar"></div>-->
+                    <div class="col-lg-6 order-0 order-lg-1 text-center">
+                        <picture class="welcome-pic">
+                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/welcome-image.png') %>" alt="" title="">
+                        </picture>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
+        <section class="section section-numbers section-decor">
+            <div class="container-wrapper">
+                <div class="container">
+                    <div class="numbers">
+                        <div class="numbers__head">
+                            <p class="numbers__title section-title">Цифры</p>
+                            <span class="numbers__subtitle">Cентябрь 2022</span>
+                        </div>
+
+                        <div class="numbers__content">
+                            <div class="numbers__item">
+                                <p class="numbers__item-name">Торговой прибыли</p>
+                                <span class="numbers__item-num">2756%</span>
+                            </div>
+
+                            <div class="numbers__item">
+                                <p class="numbers__item-name">фьючерсных и спотовых сделок</p>
+                                <span class="numbers__item-num">67</span>
+                            </div>
+
+                            <div class="numbers__item">
+                                <p class="numbers__item-name">прибыль подписчиков</p>
+                                <span class="numbers__item-num">375000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-transactions">
+            <div class="container">
+                <div class="transactions">
+                    <div class="transactions__head">
+                        <p class="transactions__title section-title">Прошедшие сделки</p>
+                        <span class="transactions__subtitle">Онлайн</span>
+                    </div>
+
+                    <div class="transactions__content">
+                        <div class="main-slider swiper-container">
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <div class="transactions__block">
+                                        <picture class="transactions__block-decor">
+                                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-image.svg') %>" alt="" title="">
+                                        </picture>
+                                        <div class="transactions__block-head">
+                                            <p class="transactions__block-name">NEAR/USDT</p>
+                                            <span class="transactions__block-time">SPOT · <span class="time">1 мин. назад</span></span>
+                                        </div>
+                                        <div class="transactions__block-content">
+                                            <p class="transactions__block-profit text-uppercase">Прибыль</p>
+                                            <p class="transactions__block-profit-count">58.6206%
+                                                <svg>
+                                                    <use xlink:href="img/spritemap.svg#sprite-arrow-up"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                        <div class="transactions__block-footer">
+                                            <span class="transactions__block-target">Цель 4</span>
+                                            <span class="transactions__block-time-entry">Дата входа <time>06.10.2022</time></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="transactions__block">
+                                        <picture class="transactions__block-decor">
+                                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-image.svg') %>" alt="" title="">
+                                        </picture>
+                                        <div class="transactions__block-head">
+                                            <p class="transactions__block-name">BTC/USDT</p>
+                                            <span class="transactions__block-time">SPOT · <span class="time">1 мин. назад</span></span>
+                                        </div>
+                                        <div class="transactions__block-content">
+                                            <p class="transactions__block-profit text-uppercase">Прибыль</p>
+                                            <p class="transactions__block-profit-count">6.02%
+                                                <svg>
+                                                    <use xlink:href="img/spritemap.svg#sprite-arrow-up"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                        <div class="transactions__block-footer">
+                                            <span class="transactions__block-target">Цель 3</span>
+                                            <span class="transactions__block-time-entry">Дата входа <time>06.10.2022</time></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="transactions__block">
+                                        <picture class="transactions__block-decor">
+                                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-image.svg') %>" alt="" title="">
+                                        </picture>
+                                        <div class="transactions__block-head">
+                                            <p class="transactions__block-name">ETH/USDT</p>
+                                            <span class="transactions__block-time">SPOT · <span class="time">1 мин. назад</span></span>
+                                        </div>
+                                        <div class="transactions__block-content">
+                                            <p class="transactions__block-profit text-uppercase">Прибыль</p>
+                                            <p class="transactions__block-profit-count">16.3%
+                                                <svg>
+                                                    <use xlink:href="img/spritemap.svg#sprite-arrow-up"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                        <div class="transactions__block-footer">
+                                            <span class="transactions__block-target">Цель 4</span>
+                                            <span class="transactions__block-time-entry">Дата входа <time>06.10.2022</time></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="transactions__block">
+                                        <picture class="transactions__block-decor">
+                                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-image.svg') %>" alt="" title="">
+                                        </picture>
+                                        <div class="transactions__block-head">
+                                            <p class="transactions__block-name">NEAR/USDT</p>
+                                            <span class="transactions__block-time">SPOT · <span class="time">1 мин. назад</span></span>
+                                        </div>
+                                        <div class="transactions__block-content">
+                                            <p class="transactions__block-profit text-uppercase">Прибыль</p>
+                                            <p class="transactions__block-profit-count">0.963%
+                                                <svg>
+                                                    <use xlink:href="img/spritemap.svg#sprite-arrow-up"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                        <div class="transactions__block-footer">
+                                            <span class="transactions__block-target">Цель 3</span>
+                                            <span class="transactions__block-time-entry">Дата входа <time>06.10.2022</time></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="transactions__block">
+                                        <picture class="transactions__block-decor">
+                                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-image.svg') %>" alt="" title="">
+                                        </picture>
+                                        <div class="transactions__block-head">
+                                            <p class="transactions__block-name">BTC/USDT</p>
+                                            <span class="transactions__block-time">SPOT · <span class="time">1 мин. назад</span></span>
+                                        </div>
+                                        <div class="transactions__block-content">
+                                            <p class="transactions__block-profit text-uppercase">Прибыль</p>
+                                            <p class="transactions__block-profit-count">6.02%
+                                                <svg>
+                                                    <use xlink:href="img/spritemap.svg#sprite-arrow-up"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                        <div class="transactions__block-footer">
+                                            <span class="transactions__block-target">Цель 3</span>
+                                            <span class="transactions__block-time-entry">Дата входа <time>06.10.2022</time></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="transactions__block">
+                                        <picture class="transactions__block-decor">
+                                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-image.svg') %>" alt="" title="">
+                                        </picture>
+                                        <div class="transactions__block-head">
+                                            <p class="transactions__block-name">NEAR/USDT</p>
+                                            <span class="transactions__block-time">SPOT · <span class="time">1 мин. назад</span></span>
+                                        </div>
+                                        <div class="transactions__block-content">
+                                            <p class="transactions__block-profit text-uppercase">Прибыль</p>
+                                            <p class="transactions__block-profit-count">58.6206%
+                                                <svg>
+                                                    <use xlink:href="img/spritemap.svg#sprite-arrow-up"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                        <div class="transactions__block-footer">
+                                            <span class="transactions__block-target">Цель 4</span>
+                                            <span class="transactions__block-time-entry">Дата входа <time>06.10.2022</time></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="transactions__block">
+                                        <picture class="transactions__block-decor">
+                                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-image.svg') %>" alt="" title="">
+                                        </picture>
+                                        <div class="transactions__block-head">
+                                            <p class="transactions__block-name">BTC/USDT</p>
+                                            <span class="transactions__block-time">SPOT · <span class="time">1 мин. назад</span></span>
+                                        </div>
+                                        <div class="transactions__block-content">
+                                            <p class="transactions__block-profit text-uppercase">Прибыль</p>
+                                            <p class="transactions__block-profit-count">6.02%
+                                                <svg>
+                                                    <use xlink:href="img/spritemap.svg#sprite-arrow-up"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                        <div class="transactions__block-footer">
+                                            <span class="transactions__block-target">Цель 3</span>
+                                            <span class="transactions__block-time-entry">Дата входа <time>06.10.2022</time></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="transactions__block">
+                                        <picture class="transactions__block-decor">
+                                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-image.svg') %>" alt="" title="">
+                                        </picture>
+                                        <div class="transactions__block-head">
+                                            <p class="transactions__block-name">ETH/USDT</p>
+                                            <span class="transactions__block-time">SPOT · <span class="time">1 мин. назад</span></span>
+                                        </div>
+                                        <div class="transactions__block-content">
+                                            <p class="transactions__block-profit text-uppercase">Прибыль</p>
+                                            <p class="transactions__block-profit-count">16.3%
+                                                <svg>
+                                                    <use xlink:href="img/spritemap.svg#sprite-arrow-up"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                        <div class="transactions__block-footer">
+                                            <span class="transactions__block-target">Цель 4</span>
+                                            <span class="transactions__block-time-entry">Дата входа <time>06.10.2022</time></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="transactions__block">
+                                        <picture class="transactions__block-decor">
+                                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-image.svg') %>" alt="" title="">
+                                        </picture>
+                                        <div class="transactions__block-head">
+                                            <p class="transactions__block-name">NEAR/USDT</p>
+                                            <span class="transactions__block-time">SPOT · <span class="time">1 мин. назад</span></span>
+                                        </div>
+                                        <div class="transactions__block-content">
+                                            <p class="transactions__block-profit text-uppercase">Прибыль</p>
+                                            <p class="transactions__block-profit-count">0.963%
+                                                <svg>
+                                                    <use xlink:href="img/spritemap.svg#sprite-arrow-up"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                        <div class="transactions__block-footer">
+                                            <span class="transactions__block-target">Цель 3</span>
+                                            <span class="transactions__block-time-entry">Дата входа <time>06.10.2022</time></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="transactions__block">
+                                        <picture class="transactions__block-decor">
+                                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-image.svg') %>" alt="" title="">
+                                        </picture>
+                                        <div class="transactions__block-head">
+                                            <p class="transactions__block-name">BTC/USDT</p>
+                                            <span class="transactions__block-time">SPOT · <span class="time">1 мин. назад</span></span>
+                                        </div>
+                                        <div class="transactions__block-content">
+                                            <p class="transactions__block-profit text-uppercase">Прибыль</p>
+                                            <p class="transactions__block-profit-count">6.02%
+                                                <svg>
+                                                    <use xlink:href="img/spritemap.svg#sprite-arrow-up"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                        <div class="transactions__block-footer">
+                                            <span class="transactions__block-target">Цель 3</span>
+                                            <span class="transactions__block-time-entry">Дата входа <time>06.10.2022</time></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="transactions__block">
+                                        <picture class="transactions__block-decor">
+                                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-image.svg') %>" alt="" title="">
+                                        </picture>
+                                        <div class="transactions__block-head">
+                                            <p class="transactions__block-name">NEAR/USDT</p>
+                                            <span class="transactions__block-time">SPOT · <span class="time">1 мин. назад</span></span>
+                                        </div>
+                                        <div class="transactions__block-content">
+                                            <p class="transactions__block-profit text-uppercase">Прибыль</p>
+                                            <p class="transactions__block-profit-count">58.6206%
+                                                <svg>
+                                                    <use xlink:href="img/spritemap.svg#sprite-arrow-up"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                        <div class="transactions__block-footer">
+                                            <span class="transactions__block-target">Цель 4</span>
+                                            <span class="transactions__block-time-entry">Дата входа <time>06.10.2022</time></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="transactions__block">
+                                        <picture class="transactions__block-decor">
+                                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-image.svg') %>" alt="" title="">
+                                        </picture>
+                                        <div class="transactions__block-head">
+                                            <p class="transactions__block-name">BTC/USDT</p>
+                                            <span class="transactions__block-time">SPOT · <span class="time">1 мин. назад</span></span>
+                                        </div>
+                                        <div class="transactions__block-content">
+                                            <p class="transactions__block-profit text-uppercase">Прибыль</p>
+                                            <p class="transactions__block-profit-count">6.02%
+                                                <svg>
+                                                    <use xlink:href="img/spritemap.svg#sprite-arrow-up"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                        <div class="transactions__block-footer">
+                                            <span class="transactions__block-target">Цель 3</span>
+                                            <span class="transactions__block-time-entry">Дата входа <time>06.10.2022</time></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="transactions__block">
+                                        <picture class="transactions__block-decor">
+                                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-image.svg') %>" alt="" title="">
+                                        </picture>
+                                        <div class="transactions__block-head">
+                                            <p class="transactions__block-name">ETH/USDT</p>
+                                            <span class="transactions__block-time">SPOT · <span class="time">1 мин. назад</span></span>
+                                        </div>
+                                        <div class="transactions__block-content">
+                                            <p class="transactions__block-profit text-uppercase">Прибыль</p>
+                                            <p class="transactions__block-profit-count">16.3%
+                                                <svg>
+                                                    <use xlink:href="img/spritemap.svg#sprite-arrow-up"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                        <div class="transactions__block-footer">
+                                            <span class="transactions__block-target">Цель 4</span>
+                                            <span class="transactions__block-time-entry">Дата входа <time>06.10.2022</time></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="transactions__block">
+                                        <picture class="transactions__block-decor">
+                                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-image.svg') %>" alt="" title="">
+                                        </picture>
+                                        <div class="transactions__block-head">
+                                            <p class="transactions__block-name">NEAR/USDT</p>
+                                            <span class="transactions__block-time">SPOT · <span class="time">1 мин. назад</span></span>
+                                        </div>
+                                        <div class="transactions__block-content">
+                                            <p class="transactions__block-profit text-uppercase">Прибыль</p>
+                                            <p class="transactions__block-profit-count">0.963%
+                                                <svg>
+                                                    <use xlink:href="img/spritemap.svg#sprite-arrow-up"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                        <div class="transactions__block-footer">
+                                            <span class="transactions__block-target">Цель 3</span>
+                                            <span class="transactions__block-time-entry">Дата входа <time>06.10.2022</time></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="transactions__block">
+                                        <picture class="transactions__block-decor">
+                                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-image.svg') %>" alt="" title="">
+                                        </picture>
+                                        <div class="transactions__block-head">
+                                            <p class="transactions__block-name">BTC/USDT</p>
+                                            <span class="transactions__block-time">SPOT · <span class="time">1 мин. назад</span></span>
+                                        </div>
+                                        <div class="transactions__block-content">
+                                            <p class="transactions__block-profit text-uppercase">Прибыль</p>
+                                            <p class="transactions__block-profit-count">6.02%
+                                                <svg>
+                                                    <use xlink:href="img/spritemap.svg#sprite-arrow-up"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                        <div class="transactions__block-footer">
+                                            <span class="transactions__block-target">Цель 3</span>
+                                            <span class="transactions__block-time-entry">Дата входа <time>06.10.2022</time></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-scrollbar-wrapper">
+                            <div class="swiper-scrollbar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-company section-decor">
+            <div class="container-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="company-info">
+                                <p class="company-info__title section-title">О компании</p>
+                                <p class="company-info__text">Мы опытная команда, для которой трейдинг – профессия. TradeBlade является авторизованным официальным брокером биржи
+                                    Binance.</p>
+                                <p class="company-info__text">Он представляет пользователям множество преимуществ, таких как более високая скорость синхронизации API и возможность
+                                    создать учетную запись Binance через платформу TradeBlade всего в 1 клик.</p>
+                            </div>
+                        </div>
+                        <div class="offset-lg-2 col-lg-6">
+                            <form action="" method="post" class="company-form">
+                                <p class="company-form__text">Попробуйте сейчас и получите
+                                    5 дней бесплатного пользования</p>
+
+                                <label for="company_subscribe" class="company-form__input-wrap form-group d-block">
+                                    <input type="email" id="company_subscribe" class="form-control" placeholder="Ваш e–mail">
+                                    <button type="submit" class="btn btn-primary border-0 text-uppercase">попробовать</button>
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-tariffs">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-lg-2 col-lg-8">
+                        <div class="tariffs">
+                            <p class="tariffs__title section-title">тарифы</p>
+
+                            <div id="tabs">
+                                <ul>
+                                    <li><a href="#tabs-1">СПОТ</a></li>
+                                    <li><a href="#tabs-2">фьючерс</a></li>
+                                </ul>
+
+                                <div id="tabs-1">
+                                    <div class="tariff">
+                                        <div class="tariff__card">
+                                            <div class="tariff__card-head">
+                                                <p class="tariff__card-name">STANDART</p>
+                                            </div>
+
+                                            <ul class="tariff__card-list">
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Ручной трейдинг
+                                                </li>
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Автоматическое или полуавтоматическое копирование сделок
+                                                </li>
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Личный кабинет со статистикой
+                                                </li>
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Среднесрочные сделки с уровнями набора портфеля
+                                                </li>
+                                            </ul>
+
+                                            <div class="tariff__card-footer">
+                                                <span class="tariff__card-price" data-discount="-35%">$234</span>
+
+                                                <select name="" id="standart" class="tariff__card-select select-js">
+                                                    <option value="12">12 месяцев</option>
+                                                    <option value="6">6 месяцев</option>
+                                                    <option value="3">3 месяца</option>
+                                                    <option value="1">1 месяц</option>
+                                                </select>
+
+                                                <a href="#" class="tariff__card-btn btn btn-primary w-100 border-0 text-uppercase">Попробовать <span
+                                                        class="">5 дней бесплатно</span></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="tariff__card vip">
+                                            <div class="tariff__card-head">
+                                                <p class="tariff__card-name">VIP</p>
+                                            </div>
+
+                                            <ul class="tariff__card-list">
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Ручной трейдинг
+                                                </li>
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Автоматическое или полуавтоматическое копирование сделок
+                                                </li>
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Личный кабинет со статистикой
+                                                </li>
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Краткосрочные, среднесрочные и инвест сделки
+                                                </li>
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Доступ в Vip чат с командой
+                                                </li>
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Наш авторский курс по трейдингу
+                                                </li>
+                                            </ul>
+
+                                            <div class="tariff__card-footer">
+                                                <span class="tariff__card-price" data-discount="-35%">$585</span>
+
+                                                <select name="" id="vip" class="tariff__card-select select-js">
+                                                    <option value="12">12 месяцев</option>
+                                                    <option value="6">6 месяцев</option>
+                                                    <option value="3">3 месяца</option>
+                                                    <option value="1">1 месяц</option>
+                                                </select>
+
+                                                <a href="#" class="tariff__card-btn btn btn-primary w-100 border-0 text-uppercase">Попробовать <span
+                                                        class="">5 дней бесплатно</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="tabs-2">
+                                    <div class="tariff">
+                                        <div class="tariff__card">
+                                            <div class="tariff__card-head">
+                                                <p class="tariff__card-name">STANDART</p>
+                                            </div>
+
+                                            <ul class="tariff__card-list">
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Ручной трейдинг
+                                                </li>
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Автоматическое или полуавтоматическое копирование сделок
+                                                </li>
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Личный кабинет со статистикой
+                                                </li>
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Среднесрочные сделки с уровнями набора портфеля
+                                                </li>
+                                            </ul>
+
+                                            <div class="tariff__card-footer">
+                                                <span class="tariff__card-price" data-discount="-35%">$234</span>
+
+                                                <select name="" id="" class="tariff__card-select select-js">
+                                                    <option value="12">12 месяцев</option>
+                                                    <option value="6">6 месяцев</option>
+                                                    <option value="3">3 месяца</option>
+                                                    <option value="1">1 месяц</option>
+                                                </select>
+
+                                                <a href="#" class="tariff__card-btn btn btn-primary w-100 border-0 text-uppercase">Попробовать <span
+                                                        class="">5 дней бесплатно</span></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="tariff__card vip">
+                                            <div class="tariff__card-head">
+                                                <p class="tariff__card-name">VIP</p>
+                                            </div>
+
+                                            <ul class="tariff__card-list">
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Ручной трейдинг
+                                                </li>
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Автоматическое или полуавтоматическое копирование сделок
+                                                </li>
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Личный кабинет со статистикой
+                                                </li>
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Краткосрочные, среднесрочные и инвест сделки
+                                                </li>
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Доступ в Vip чат с командой
+                                                </li>
+                                                <li>
+                                                    <svg>
+                                                        <use xlink:href="img/spritemap.svg#sprite-check"></use>
+                                                    </svg>
+                                                    Наш авторский курс по трейдингу
+                                                </li>
+                                            </ul>
+
+                                            <div class="tariff__card-footer">
+                                                <span class="tariff__card-price" data-discount="-35%">$585</span>
+
+                                                <select name="" id="" class="tariff__card-select select-js">
+                                                    <option value="12">12 месяцев</option>
+                                                    <option value="6">6 месяцев</option>
+                                                    <option value="3">3 месяца</option>
+                                                    <option value="1">1 месяц</option>
+                                                </select>
+
+                                                <a href="#" class="tariff__card-btn btn btn-primary w-100 border-0 text-uppercase">Попробовать <span
+                                                        class="">5 дней бесплатно</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-faq">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-lg-2 col-lg-8">
+                        <div class="faq">
+                            <p class="faq__title section-title">часто задаваемые вопросы</p>
+                            <div class="faq__content">
+                                <div class="faq__item">
+                                    <div class="faq__item-head">
+                                        <p class="faq__item-name">Что такое TradeBlade</p>
+                                        <svg class="faq__item-button">
+                                            <use xlink:href="img/spritemap.svg#sprite-chevrone-down"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="faq__item-body">
+                                        <p class="faq__item-text">Мы опытная команда, для которой трейдинг – профессия. TradeBlade является авторизованным официальным брокером биржи Binance.
+
+                                            Он представляет пользователям множество преимуществ, таких как более високая скорость синхронизации API и возможность создать учетную запись Binance через платформу TradeBlade всего в 1 клик.</p>
+                                    </div>
+                                </div>
+                                <div class="faq__item">
+                                    <div class="faq__item-head">
+                                        <p class="faq__item-name">Что TradeBlade предлагает инвесторам</p>
+                                        <svg class="faq__item-button">
+                                            <use xlink:href="img/spritemap.svg#sprite-chevrone-down"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="faq__item-body">
+                                        <p class="faq__item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus adipisci animi aspernatur autem consequatur
+                                            cumque delectus dignissimos distinctio dolor eaque eos explicabo id illum incidunt modi nobis praesentium quidem, ratione rerum sint
+                                            vero voluptates! A aut beatae quibusdam voluptatibus!</p>
+                                    </div>
+                                </div>
+                                <div class="faq__item">
+                                    <div class="faq__item-head">
+                                        <p class="faq__item-name">Должен ли я перевести свои средства на TradeBlade</p>
+                                        <svg class="faq__item-button">
+                                            <use xlink:href="img/spritemap.svg#sprite-chevrone-down"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="faq__item-body">
+                                    <p class="faq__item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias atque deleniti deserunt ducimus, earum eum excepturi
+                                        labore laudantium magnam molestias numquam perspiciatis quam quasi, qui quia recusandae sit tenetur ullam voluptate. Accusantium aperiam
+                                        consequuntur ex exercitationem incidunt nam, nesciunt quo tempora veniam voluptates! Deleniti est expedita perferendis quas quos!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--<div class="section">
             <div class="container">
                 <h2>Section Pictures</h2>
                 <picture>
@@ -78,30 +819,40 @@
                     <use xlink:href="img/spritemap.svg#sprite-ok"></use>
                 </svg>
             </div>
-        </div>
-
-        <div class="section">
-            <div class="container">
-                <h2>Section Range slider</h2>
-
-                <div class="slider-range"><input type="range" value="75" min="1" max="100"></div>
-                <div class="slider-range"><input type="range" value="275" max="1000"></div>
-                <div class="slider-range"><input type="range"></div>
-
-                <br>
-
-                <div class="slider-handles"><input type="range" min="2000" max="10000"></div>
-                <div class="slider-handles"><input type="range" max="1000"></div>
-                <div class="slider-handles"><input type="range"></div>
-            </div>
-        </div>
+        </div>-->
     </main>
     <!-- CONTENT END -->
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="container bg-info">
-            <h3 class="m-0">Footer Title</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="footer-navigation">
+                        <p class="footer-navigation__text">Быстрая навигация</p>
+
+                        <nav class="footer-navigation__nav">
+                            <ul>
+                                <li><a href="#01">Цифры</a></li>
+                                <li><a href="#02">Сделки онлайн</a></li>
+                                <li><a href="#03">о компании</a></li>
+                                <li><a href="#04">tradeblad это</a></li>
+                                <li><a href="#05">тарифы</a></li>
+                                <li><a href="#06">FAQ</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer-info">
+                        <a href="/" class="logo">
+                            <img src="<%= require('./img/logo.svg') %>" alt="">
+                        </a>
+
+                        <p class="copyright"> 2022 TradeBlade. All rights reserved</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
     <!-- FOOTER END -->

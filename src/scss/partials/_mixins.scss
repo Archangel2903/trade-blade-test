@@ -12,3 +12,16 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin input-placeholder() {
+  font-weight: $font-weight-medium;
+  font-size: 1rem;
+  color: $input-placeholder-color;
+  text-transform: uppercase;
+  transition: $transition-base;
+}
+
+@mixin input-focus-placeholder() {
+  color: transparent;
+  transform: rotate3d(1, 0, 0, 90deg);
+}

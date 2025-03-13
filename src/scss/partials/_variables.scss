@@ -1,16 +1,30 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --first-color: #7a0000;
+  --second-color: #007d00;
+  --third-color: #000082;
+}
+
 // main colors
-$main-first-color: #7a0000;
-$main-second-color: #007d00;
-$main-third-color: #000082;
+$main-first-color: var(--first-color);
+$main-second-color: var(--second-color);
+$main-third-color: var(--third-color);
 
 // colors
-$title-color: #111;
-$text-color: #333;
-$input-placeholder-color: #aaa;
+$title-color: var(--white);
+$text-color: var(--white);
+$link-color: var(--white);
+$link-hover-color: var(--third-color);
+$input-placeholder-color: rgba(255, 255, 255, 0.34);
+
+//selection colors
+$selection-text-color: #5E47FF;
+$selection-bg-color: var(--white);
 
 // fonts
-$font-family-base: 'Verdana', sans-serif;
-$font-family-custom: 'Arial', sans-serif;
+$font-family-base: 'Arial', sans-serif;
+$font-family-custom: 'Verdana', sans-serif;
 $font-family-unique: 'Times New Roman', serif;
 
 // font-weight
@@ -22,8 +36,36 @@ $font-size-default: 16px;
 $line-height-base: 1.25;
 
 // behavior
-$transition-base: all .3s ease 0s;
+$transition-base: all .3s ease-in-out 0s;
 
 //Bootstrap var
-$enable-shadows: true;
-$body-color: $text-color;
+$enable-shadows: false;
+$body-color: var(--white);
+$body-bg: #030718;
+$primary: #57E1FF;
+$grid-gutter-width: 40px;
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1440px,
+);
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1320px,
+);
+
+$firstIteration: true;
+@each $breakpoint, $value in $grid-breakpoints {
+  @if not $firstIteration {
+    $container-max-widths: map-merge($container-max-widths, ($breakpoint: $value - $grid-gutter-width));
+  }
+  $firstIteration: false;
+}
