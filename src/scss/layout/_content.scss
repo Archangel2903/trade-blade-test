@@ -18,7 +18,7 @@
     height: 60px;
     margin-bottom: -1px;
     background: var(--white);
-    clip-path: polygon(0 0, 92% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
   }
 }
 
@@ -82,10 +82,13 @@
 
   &__head {
     flex: auto 1 1;
-    max-width: 25%;
+    //max-width: 25%;
+    margin: 0 0 40px;
   }
   &__title {}
-  &__subtitle {}
+  &__subtitle {
+    color: rgba(#000000, .5);
+  }
   &__content {
     flex: auto 1 1;
     display: inline-flex;
@@ -93,19 +96,22 @@
     justify-content: space-between;
     align-content: center;
     align-items: center;
+    gap: 32px;
   }
   &__item {
-    max-width: 25%;
+    flex: auto 0 1;
+    max-width: 44%;
+
     &-name {
       margin: 0 0 8px;
       opacity: .8;
+      color: rgba(#000000, .8);
       font-size: 14px;
       text-transform: uppercase;
-      white-space: nowrap;
     }
     &-num {
       color: #6a54ff;
-      font-size: 60px;
+      font-size: 35px;
       font-weight: 500;
     }
   }
@@ -248,7 +254,7 @@
 .section-company {
   .container-wrapper {
     background: var(--white);
-    padding: 56px 0 92px;
+    padding: 24px 0 40px;
     color: var(--black);
   }
 }
@@ -265,13 +271,13 @@
 
       margin: 0;
       color: rgba(#000000, .8);
-      font-size: 14px;
     }
   }
   &-form {
     width: 100%;
     background: #6a54ff;
-    padding: 32px 64px 40px;
+    padding: 16px;
+    margin: 40px 0 -125px;
 
     &__text {
       margin: 0 auto 32px;
@@ -469,9 +475,57 @@
 
 /* MEDIA CONTENT */
 @include media-breakpoint-up(sm) {}
-@include media-breakpoint-up(md) {}
-@include media-breakpoint-up(lg) {}
+@include media-breakpoint-up(md) {
+  .section-decor {
+    &::before {
+      clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
+    }
+  }
+
+  .section-company {
+    .container-wrapper {
+      padding: 56px 0 92px;
+    }
+  }
+
+  .company {
+    &-form {
+      padding: 32px 64px 40px;
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .numbers {
+    &__head {
+      margin: 0;
+    }
+    &__content {
+      gap: 0;
+    }
+    &__item {
+      &-name {
+        white-space: nowrap;
+      }
+      &-num {
+        font-size: 60px;
+      }
+    }
+  }
+
+  .company {
+    &-form {
+      padding: 16px;
+      margin: 0;
+    }
+  }
+}
 @include media-breakpoint-up(xl) {
+  .section-decor {
+    &::before {
+      clip-path: polygon(0 0, 92% 0, 100% 100%, 0% 100%);
+    }
+  }
+
   .section-welcome {
     padding: 160px 0 134px;
   }
@@ -489,6 +543,12 @@
   .section-numbers {
     .container-wrapper {
       padding: 65px 0 61px;
+    }
+  }
+
+  .company {
+    &-form {
+      padding: 32px 64px 40px;
     }
   }
 }
